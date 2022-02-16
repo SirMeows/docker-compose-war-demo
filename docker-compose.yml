@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  web:
+    platform: linux/amd64
+    build: ./tomcat/
+    container_name: tomcat_war_demo
+    restart: unless-stopped
+    ports:
+     - "9999:8080"
+    volumes:
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+      - ./tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+    # copy the tomcat manager app, context.xml and start tomcat)
+    command: sh -c "cp -r /usr/local/tomcat/webapps.dist/manager /usr/local/tomcat/webapps && cp /tmp/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml && catalina.sh run"
+    
