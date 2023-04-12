@@ -1,5 +1,7 @@
 # docker-compose-war-demo
 
+## Teacher's example code for study purposes
+
 Simple Docker-compose setup to demonstrate war-file deployment with Tomcat.
 It's meant for a class demo at [KEA](https://kea.dk/uddannelser/erhvervsakademi/datamatiker), so instructions here are sparse.
 
